@@ -4,10 +4,10 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import pprint
 
-#Pasarela para entrar en la API
+#Pasarela para entrar en la API.
 scope = ['https://spreadsheets.google.com/feeds']
 
-#Credenciales. Usamos variables de entorno para no colgar información sensible en github
+#Credenciales. Usamos variables de entorno para no colgar información sensible en github.
 mydictcreds ={"type": os.environ["TYPE"],
 "project_id": os.environ["PROJECT_ID"],
 "private_key_id": os.environ["PRIVATE_KEY_ID"],
@@ -20,13 +20,13 @@ mydictcreds ={"type": os.environ["TYPE"],
 "client_x509_cert_url": os.environ["CLIENT_X509"]
 }
 
-creds = ServiceAccountCredentials.from_json_keyfile_dict(mydictcreds, scope)    #Nos conectamos
+creds = ServiceAccountCredentials.from_json_keyfile_dict(mydictcreds, scope)    #Nos conectamos.
 client = gspread.authorize(creds)
 
 
 
 #creds = ServiceAccountCredentials.from_json_keyfile_name('BotCS-0877f1f9375e.json', scope)
-                                              #Nos autorizamos
+                                              #Nos autorizamos.
 
 @hug.get('/')
 def raiz():
